@@ -11,27 +11,39 @@ import java.util.Scanner;
 
 
 @SpringBootApplication
-@RestController
 public class CommercebankfundraiserApplication {
 
-	@GetMapping
+	//@GetMapping
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+//		Scanner input = new Scanner(System.in);
 		SpringApplication.run(CommercebankfundraiserApplication.class, args);
-
+//
 		Connection connection = null;
-		try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/User", "root", "Bilal786");
-			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery("select * from users");
-			while(resultSet.next()){
-				System.out.println(resultSet.getString("name"));
-			}
+//
+try {
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration", "root", "Bilal786");
+			//Statement statement = connection.createStatement();
+			//ResultSet resultSet = statement.executeQuery("USE registration");
+			//PreparedStatement pst = connection.prepareStatement("insert into users(id, name, email, title) values(?,?,?,?)" );
+////			pst.setString(1, id);
+////			pst.setString(2, name);
+////			pst.setString(3, email);
+////			pst.setString(4, title);
+////			int rowCount = pst.executeUpdate();
+//			while(resultSet.next()){
+//				System.out.println(resultSet.getString("name"));
+//				System.out.println(resultSet.getString("email"));
+//				System.out.println(resultSet.getString("title"));
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//
+//
+//
+
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
-
-
 	}
-
 }
