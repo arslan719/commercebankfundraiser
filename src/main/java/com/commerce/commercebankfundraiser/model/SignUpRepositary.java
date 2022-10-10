@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 @Repository
 @Transactional(readOnly = true)
-public interface SignUpRepositary extends JpaRepository<signUp, Long> {
-    Optional<signUp> findByEmail(String email);
+public interface SignUpRepositary extends JpaRepository<SignUp, Long> {
+    Optional<SignUp> findByEmail(String email);
 }

@@ -9,19 +9,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.Collections;
-
-import static java.util.Collection.*;
-import static java.util.Collections.singletonList;
 
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
-public class signUp implements UserDetails {
+public class SignUp implements UserDetails {
 
     @SequenceGenerator(
             name = "user_sequence",
@@ -43,13 +39,11 @@ public class signUp implements UserDetails {
     private boolean locked;
     private boolean enabled;
 
-    public signUp(String firstName,
+    public SignUp(String firstName,
                   String lastName,
                   String email,
                   String password,
-                  SignUpRole signUpRole,
-                  boolean locked,
-                  boolean enabled) {
+                  SignUpRole signUpRole) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
