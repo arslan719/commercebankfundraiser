@@ -2,7 +2,7 @@ package com.commerce.commercebankfundraiser.service;
 
 import com.commerce.commercebankfundraiser.exception.UserNotFoundException;
 import com.commerce.commercebankfundraiser.model.User;
-import com.commerce.commercebankfundraiser.model.UserRepo;
+import com.commerce.commercebankfundraiser.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

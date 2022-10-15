@@ -1,5 +1,6 @@
-package com.commerce.commercebankfundraiser.model;
+package com.commerce.commercebankfundraiser.repo;
 
+import com.commerce.commercebankfundraiser.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
