@@ -13,8 +13,18 @@ import java.util.Arrays;
 public class CommercebankfundraiserApplication {
 
 	public static void main(String[] args) {
+
+
+		SpringApplication.run(CommercebankfundraiserApplication.class, args);
+
+		Connection connection = null;
+
+try {
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraiser", "root", "Bilal786");
+
 		SpringApplication.run(CommercebankfundraiserApplication.class, args);
 	}
+
 
 
 	@Bean
