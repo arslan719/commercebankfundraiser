@@ -13,14 +13,14 @@ import java.sql.*;
 public class CommercebankfundraiserApplication {
 
 	public static void main(String[] args) {
-//		Scanner input = new Scanner(System.in);
+
 		SpringApplication.run(CommercebankfundraiserApplication.class, args);
-//
+
 		Connection connection = null;
-//
+
 try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration", "root", "Bilal786");
-			//Statement statement = connection.createStatement();
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraiser", "root", "Bilal786");
+//			//Statement statement = connection.createStatement();
 			//ResultSet resultSet = statement.executeQuery("USE registration");
 			//PreparedStatement pst = connection.prepareStatement("insert into users(id, name, email, title) values(?,?,?,?)" );
 ////			pst.setString(1, id);
