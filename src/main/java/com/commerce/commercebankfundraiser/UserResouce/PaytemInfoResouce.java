@@ -23,7 +23,7 @@ public class PaytemInfoResouce {
         return new ResponseEntity<>(paytemInfos, HttpStatus.OK);
     }
     @GetMapping("/find/{id}")
-    public ResponseEntity<PaytemInfo>getPaytemByID(@PathVariable("id")Long id)
+    public ResponseEntity<PaytemInfo>getPaytemById(@PathVariable("id")Long id)
     {
         PaytemInfo paytemInfo = paytemInfoService.findPaytemInfo(id);
         return new ResponseEntity<>(paytemInfo,HttpStatus.OK);

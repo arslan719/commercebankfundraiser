@@ -8,33 +8,31 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
 @Service
 @AllArgsConstructor
 public class SignUpService implements UserDetailsService {
-    private final static String USER_NOT_FOUND_MSG = "user with email %s not found";
-    private final SignUpRepositary signUpRepositary;
+    private final static String USER_NOT_FOUND_MSG = "user with email is not found";
+
+    private final SignUpRepository signUpRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
-        return signUpRepositary.findByEmail(email).orElseThrow(() ->
+        return signUpRepository.findByEmail(email).orElseThrow(() ->
                 new UsernameNotFoundException(
                         String.format(USER_NOT_FOUND_MSG, email)));
     }
 
     public String signUpUser(SignUp signup){
-        boolean userExist = signUpRepositary.findByEmail(signup.getEmail()).isPresent();
+        boolean userExist = signUpRepository.findByEmail(signup.getEmail()).isPresent();
         if (userExist){
-            throw new IllegalStateException ("Email already exist");
+            throw new IllegalStateException ("Email already exist, Please sign in");
         }
 
         String encodedPassword = bCryptPasswordEncoder.encode(signup.getPassword());
         signup.setPassword(encodedPassword);
-        signUpRepositary.save(signup);
+        signUpRepository.save(signup);
 
         return "User is registered";
     }

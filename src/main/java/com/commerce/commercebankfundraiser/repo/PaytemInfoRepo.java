@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface PaytemInfoRepo extends JpaRepository<PaytemInfo,Long> {
 
-    void deletePaytemInfoByID(Long id);
+    void deletePaytemInfoById(Long id);
 
     @Override
     Optional<PaytemInfo> findById(Long id);

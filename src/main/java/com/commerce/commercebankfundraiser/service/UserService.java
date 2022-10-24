@@ -25,11 +25,11 @@ public class UserService {
    }
    public User findUser(Long Id)
    {
-       return useRepo.findUserByID(Id).orElseThrow(()-> new UserNotFoundException("User by id"+ Id +"was not found"));
+       return useRepo.findUserById(Id).orElseThrow(()-> new UserNotFoundException("User by id"+ Id +"was not found"));
    }
    public void deleteUser(Long id)
    {
-       useRepo.deleteUserByID(id);
+       useRepo.deleteUserById(id);
    }
 
 }

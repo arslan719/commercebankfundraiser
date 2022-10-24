@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface CardInfoRepo extends JpaRepository<CardInfo,Long> {
-    void deleteCardInfoByID(Long id);
-    Optional<CardInfo>findCardInfoByID(Long id);
+    void deleteCardInfoById(Long id);
+    Optional<CardInfo>findCardInfoById(Long id);
 }
