@@ -49,8 +49,8 @@ public class SignUp implements UserDetails {
         this.email = email;
         this.password = password;
         this.signUpRole = signUpRole;
-        this.locked = locked;
-        this.enabled = enabled;
+        //this.locked = locked;
+        //this.enabled = enabled;
     }
 
     @Override
@@ -86,6 +86,6 @@ public class SignUp implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return enabled;
+        return !enabled;
     }
 }
